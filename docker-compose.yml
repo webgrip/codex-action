@@ -1,6 +1,6 @@
 services:
-  action-action.lint:
-    container_name: action-action.lint
+  codex-action.lint:
+    container_name: codex-action.lint
     build:
       context: .
       dockerfile: ops/action/Dockerfile
@@ -9,35 +9,35 @@ services:
       - NODE_ENV=lint
     tty: true
 
-  action-action.test:
-    container_name: action-action.test
+  codex-action.test:
+    container_name: codex-action.test
     build:
       context: .
       dockerfile: ops/action/Dockerfile
       target: test
     depends_on:
-      action-action.lint:
+      codex-action.lint:
         condition: service_completed_successfully
     environment:
       - NODE_ENV=test
     tty: true
 
-  action-action.app:
-    container_name: action-action.app
+  codex-action.app:
+    container_name: codex-action.app
     build:
       context: .
       dockerfile: ops/action/Dockerfile
       target: runtime
     depends_on:
-      action-action.test:
+      codex-action.test:
         condition: service_completed_successfully
     environment:
       - NODE_ENV=production
     ports:
       - "3000:3000"
 
-  action-action.dev:
-    container_name: action-action.dev
+  codex-action.dev:
+    container_name: codex-action.dev
     image: node:24-alpine
     working_dir: /workspace
     volumes:

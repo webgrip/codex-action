@@ -1,6 +1,6 @@
-name: 'action-action'
-description: 'action-action description'
-author: 'organisation'
+name: 'codex-action'
+description: 'codex-action description'
+author: 'webgrip'
 runs:
   using: 'node24'
   main: 'dist/index.js'
