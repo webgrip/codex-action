@@ -1,7 +1,7 @@
 {
-  "name": "action-action",
+  "name": "codex-action",
   "version": "0.1.0",
-  "description": "action-action description",
+  "description": "codex-action description",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
