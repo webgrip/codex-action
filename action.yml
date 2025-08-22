@@ -1,6 +1,0 @@
-name: 'codex-action'
-description: 'codex-action description'
-author: 'webgrip'
-runs:
-  using: 'node24'
-  main: 'dist/index.js'
